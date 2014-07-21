@@ -12,7 +12,7 @@ class Chef
 
         action :create do
           converge_by 'ubuntu pattern' do
-            %w(mysql-client libmysqlclient-dev).each do |p|
+            %w(mysql-client-5.6 libmysqlclient-dev).each do |p|
               package p do
                 action :install
               end
@@ -22,7 +22,7 @@ class Chef
 
         action :delete do
           converge_by 'ubuntu pattern' do
-            %w(mysql-client libmysqlclient-dev).each do |p|
+            %w(mysql-client-5.6 libmysqlclient-dev).each do |p|
               package p do
                 action :remove
               end
